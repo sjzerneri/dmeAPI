@@ -29,8 +29,10 @@ The CSS code gets to executed from top to bottom and left ro right
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
-    body {
-        font-family: 'Molengo', sans-serif;
+    body {}
+
+    h2 {
+        margin-top: 1.1rem;
     }
     /* Header styles
 (all the styles inside the < header > or < nav > tags)
@@ -41,8 +43,10 @@ The CSS code gets to executed from top to bottom and left ro right
         background-color: white;
         width: 80%;
         margin: 0 auto;
-        text-align: center;
-        font-size: 3rem;
+        text-align: left;
+        font-size: 1.5rem;
+        font-family: 'Pacifico', cursive;
+        color: #f97252;
     }
 
     #header-content {
@@ -50,6 +54,39 @@ The CSS code gets to executed from top to bottom and left ro right
     }
     /* Content styles
 (all the styles inside the < sections > or < aside > tags)*/
+
+    section {
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        font-family: 'Yantramanav', sans-serif;
+    }
+
+    #summary-stats {
+        background-color: #e5e5e5;
+    }
+
+    #stat-1,
+    #stat-2,
+    #stat-3 {
+        background-color: #8cc3ea;
+        margin-left: 2rem;
+        width: 8rem;
+        height: 8rem;
+        color: white;
+        font-size: 1rem;
+        font-weight: 400;
+        display: inline-block;
+    }
+
+    #stat-1-data,
+    #stat-2-data,
+    #stat-3-data {
+        font-size: 2.5rem;
+        margin-top: 1rem;
+    }
     /* Footer styles
 (all the styles inside the < footer > tag)
 */

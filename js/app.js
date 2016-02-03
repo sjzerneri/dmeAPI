@@ -21,7 +21,50 @@ $(document).ready(function () {
             "$select": "count(dba_name)"
         },
         success: function (data, status, jqxhr) {
-            console.log("Request received:", data[0].count_dba_name);
+            var bidWinners = data[0].count_dba_name;
+            console.log("Total Bid Winners:", bidWinners);
+            $('#stat-1-data').text(bidWinners);
+        },
+        error: function (jqxhr, status, error) {
+            console.log("Something went wrong!");
+        }
+    });
+
+
+    $.ajax({
+        /* update API end point */
+        url: "https://data.medicare.gov/resource/pqp8-xrjv.json",
+        method: "GET",
+        dataType: "json",
+        data: {
+            "$$app_token": "7QuT4kttVYO8PCZrRHMNk26bc",
+            "$select": "count(dba_name)",
+            "$where": "oxygen_supplies_and_equipment=true"
+        },
+        success: function (data, status, jqxhr) {
+            var bidWinnersOxygen = data[0].count_dba_name;
+            console.log("Oxygen Bid Winners:", bidWinnersOxygen);
+            $('#stat-2-data').text(bidWinnersOxygen);
+        },
+        error: function (jqxhr, status, error) {
+            console.log("Something went wrong!");
+        }
+    });
+
+    $.ajax({
+        /* update API end point */
+        url: "https://data.medicare.gov/resource/pqp8-xrjv.json",
+        method: "GET",
+        dataType: "json",
+        data: {
+            "$$app_token": "7QuT4kttVYO8PCZrRHMNk26bc",
+            "$select": "count(dba_name)",
+            "$where": "cpap_devices_respiratory_assist_devices_and_related_supplies_and_accessories=true"
+        },
+        success: function (data, status, jqxhr) {
+            var bidWinnersCpap = data[0].count_dba_name;
+            console.log("CPAP Bid Winners:", bidWinnersCpap);
+            $('#stat-3-data').text(bidWinnersCpap);
         },
         error: function (jqxhr, status, error) {
             console.log("Something went wrong!");
